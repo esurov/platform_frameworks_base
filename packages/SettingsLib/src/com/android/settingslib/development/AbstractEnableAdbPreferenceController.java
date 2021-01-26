@@ -69,9 +69,7 @@ public abstract class AbstractEnableAdbPreferenceController extends
     }
 
     private boolean isAdbEnabled() {
-        final ContentResolver cr = mContext.getContentResolver();
-        return Settings.Global.getInt(cr, Settings.Global.ADB_ENABLED, ADB_SETTING_OFF)
-                != ADB_SETTING_OFF;
+	return false;
     }
 
     @Override
@@ -98,20 +96,7 @@ public abstract class AbstractEnableAdbPreferenceController extends
 
     @Override
     public boolean handlePreferenceTreeClick(Preference preference) {
-        if (isUserAMonkey()) {
-            return false;
-        }
-
-        if (TextUtils.equals(KEY_ENABLE_ADB, preference.getKey())) {
-            if (!isAdbEnabled()) {
-                showConfirmationDialog(preference);
-            } else {
-                writeAdbSetting(false);
-            }
-            return true;
-        } else {
-            return false;
-        }
+        return false;
     }
 
     protected void writeAdbSetting(boolean enabled) {
