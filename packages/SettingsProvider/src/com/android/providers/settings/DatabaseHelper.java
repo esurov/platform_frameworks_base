@@ -198,6 +198,17 @@ class DatabaseHelper extends SQLiteOpenHelper {
                     "value TEXT" +
                     ");");
         db.execSQL("CREATE INDEX systemIndex1 ON system (name);");
+        SQLiteStatement stmt = db.compileStatement("INSERT OR REPLACE INTO system(name,value)"
+                + " VALUES(?,?);");
+
+        loadBooleanSetting(stmt, Settings.System.HAPTIC_FEEDBACK_ENABLED,
+                R.bool.def_haptic_feedback_enabled);
+
+        loadBooleanSetting(stmt, Settings.System.DTMF_TONE_WHEN_DIALING,
+                R.bool.def_dtmf_tone);
+
+        loadBooleanSetting(stmt, Settings.System.SHOW_BATTERY_PERCENT,
+                R.bool.def_status_bar_show_battery_percent);
 
         createSecureTable(db);
 

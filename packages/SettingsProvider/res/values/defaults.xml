@@ -242,4 +242,7 @@
     <bool name="def_hdmiControlAutoDeviceOff">false</bool>
 
     <bool name="def_text_show_password">false</bool>
+    <bool name="def_haptic_feedback_enabled">false</bool>
+    <bool name="def_dtmf_tone">false</bool>
+    <bool name="def_status_bar_show_battery_percent">true</bool>
 </resources>
