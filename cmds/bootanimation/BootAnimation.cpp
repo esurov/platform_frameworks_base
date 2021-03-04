@@ -628,7 +628,7 @@ bool BootAnimation::android() {
         glDrawTexiOES(x,                 yc, 0, mAndroid[1].w, mAndroid[1].h);
         glDrawTexiOES(x + mAndroid[1].w, yc, 0, mAndroid[1].w, mAndroid[1].h);
 
-        glEnable(GL_BLEND);
+//        glEnable(GL_BLEND);
         glBindTexture(GL_TEXTURE_2D, mAndroid[0].name);
         glDrawTexiOES(xc, yc, 0, mAndroid[0].w, mAndroid[0].h);
 
